@@ -1,0 +1,14 @@
+{
+    "hello": {
+        "value": "Hallo"
+    },
+    "welcome": {
+        "value": "Willkommen"
+    },
+    "this_is_great": {
+        "value": "Das ist fantastisch"
+    },
+    "amount_planets": {
+        "value": "Es gibt {AMOUNT} Planeten. Aber es waren mal {AMOUNT_BEFORE}."
+    }
+}

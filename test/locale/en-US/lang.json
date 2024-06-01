@@ -1,0 +1,14 @@
+{
+    "hello": {
+        "value": "Hello"
+    },
+    "welcome": {
+        "value": "Welcome"
+    },
+    "this_is_great": {
+        "value": "This is great"
+    },
+    "amount_planets": {
+        "value": "There are {AMOUNT} planets"
+    }
+}
