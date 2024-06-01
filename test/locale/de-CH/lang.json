@@ -9,6 +9,6 @@
         "value": "Das ist fantastisch"
     },
     "amount_planets": {
-        "value": "Es gibt {AMOUNT} Planeten. Aber es waren mal {AMOUNT_BEFORE}."
+        "value": "Es gibt {CURRENT} Planeten. Aber es waren mal {BEFORE}."
     }
 }

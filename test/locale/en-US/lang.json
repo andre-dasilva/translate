@@ -9,6 +9,6 @@
         "value": "This is great"
     },
     "amount_planets": {
-        "value": "There are {AMOUNT} planets"
+        "value": "There are {CURRENT} planets"
     }
 }

@@ -34,6 +34,9 @@ de-CH/lang.json
 {
     "hello": {
         "value": "Willkommen"
+    },
+    "amount_planets": {
+        "value": "Es gibt {AMOUNT} Planeten. Aber es waren mal {AMOUNT_BEFORE}."
     }
 }
 ```
@@ -44,6 +47,9 @@ en-US/lang.json
 {
     "hello": {
         "value": "Welcome"
+    },
+    "amount_planets": {
+        "value": "There are {CURRENT} planets"
     }
 }
 ```
@@ -58,8 +64,15 @@ let assert Ok(translator) =
   |> translator.with_directory("src/locale")
   |> translator.from_json()
 
-translator.get_key("hello")
-// Willkommen
+let assert Ok(value) =
+  translator
+  |> translator.get_key("hello")
+  // value -> Willkommen
+
+let assert Ok(value) =
+  translator
+  |> translator.get_key_with_args("amount_planets",  [#("CURRENT", "7"), #("BEFORE", "8")])
+  // Es gibt 7 Planeten. Aber es waren mal 8.
 ```
 
 ## Development

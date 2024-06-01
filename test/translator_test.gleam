@@ -25,7 +25,7 @@ pub fn read_translation_de_ch_test() {
     #("this_is_great", [], "Das ist fantastisch"),
     #(
       "amount_planets",
-      [#("AMOUNT", "7"), #("AMOUNT_BEFORE", "8")],
+      [#("CURRENT", "7"), #("BEFORE", "8")],
       "Es gibt 7 Planeten. Aber es waren mal 8.",
     ),
   ]
@@ -48,7 +48,7 @@ pub fn read_translation_en_us_test() {
     #("hello", [], "Hello"),
     #("welcome", [], "Welcome"),
     #("this_is_great", [], "This is great"),
-    #("amount_planets", [#("AMOUNT", "7")], "There are 7 planets"),
+    #("amount_planets", [#("CURRENT", "7")], "There are 7 planets"),
   ]
 
   tests
