@@ -1,9 +1,9 @@
-name = "translator"
+name = "translate"
 version = "0.0.1"
 
 description = "Translate gleam applications with locale files"
 licences = ["MIT"]
-repository = { type = "github", user = "andre-dasilva", repo = "translator" }
+repository = { type = "github", user = "andre-dasilva", repo = "translate" }
 
 [dependencies]
 gleam_stdlib = ">= 0.34.0 and < 2.0.0"

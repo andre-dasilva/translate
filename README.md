@@ -1,18 +1,18 @@
 # Translator for gleam
 
-[![Package Version](https://img.shields.io/hexpm/v/translator)](https://hex.pm/packages/translator)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/translator/)
-[![Tests](https://github.com/andre-dasilva/translator/actions/workflows/test.yml/badge.svg)](https://github.com/andre-dasilva/translator/actions/workflows/test.yml)
+[![Package Version](https://img.shields.io/hexpm/v/translate)](https://hex.pm/packages/translate)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/translate/)
+[![Tests](https://github.com/andre-dasilva/translate/actions/workflows/test.yml/badge.svg)](https://github.com/andre-dasilva/translate/actions/workflows/test.yml)
 
 
-Further documentation can be found at <https://hexdocs.pm/translator>.
+Further documentation can be found at <https://hexdocs.pm/translate>.
 
 ## Getting Started
 
 ### Installation
 
 ```sh
-gleam add translator
+gleam add translate
 ```
 
 ### Usage
@@ -57,7 +57,7 @@ en-US/lang.json
 And use the translator like this
 
 ```gleam
-import translator/translator
+import translate/translator
 
 let assert Ok(translator) =
   translator.new_translator("de-CH")
