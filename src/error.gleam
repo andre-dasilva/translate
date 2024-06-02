@@ -4,8 +4,7 @@ import simplifile
 pub type TranslatorError {
   DirectoryNotSet
   DirectoryNotFound
-  KeyNotFound
-  LanguageFileNotFound
+  KeyNotFound(String)
   JsonError(json.DecodeError)
   FileError(simplifile.FileError)
 }

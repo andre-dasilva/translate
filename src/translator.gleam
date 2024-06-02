@@ -54,17 +54,24 @@ pub fn from_json(
   Ok(Translator(..translator, translations: Some(translations)))
 }
 
-pub fn get_key(
+fn priv_get_key(
   translator: Translator,
   key: String,
+  value_key: String,
+  args: List(#(String, String)),
 ) -> Result(String, error.TranslatorError) {
   let translations = translator.translations |> option.unwrap(dict.new())
 
   use translation <- result.try(
-    dict.get(translations, key) |> result.replace_error(error.KeyNotFound),
+    dict.get(translations, key) |> result.replace_error(error.KeyNotFound(key)),
   )
 
-  dict.get(translation, "value") |> result.replace_error(error.KeyNotFound)
+  use value <- result.try(
+    dict.get(translation, value_key)
+    |> result.replace_error(error.KeyNotFound(value_key)),
+  )
+
+  Ok(rec_replace_args(value, args))
 }
 
 fn rec_replace_args(value: String, args: List(#(String, String))) -> String {
@@ -85,12 +92,29 @@ fn rec_replace_args(value: String, args: List(#(String, String))) -> String {
   }
 }
 
+pub fn get_key(
+  translator: Translator,
+  key: String,
+) -> Result(String, error.TranslatorError) {
+  get_key_with_args(translator, key, [])
+}
+
 pub fn get_key_with_args(
   translator: Translator,
   key: String,
   args: List(#(String, String)),
 ) -> Result(String, error.TranslatorError) {
-  use translation <- result.try(get_key(translator, key))
+  priv_get_key(translator, key, "value", args)
+}
 
-  Ok(rec_replace_args(translation, args))
+pub fn get_key_plural(
+  translator: Translator,
+  key: String,
+  count: Int,
+  args: List(#(String, String)),
+) {
+  case count {
+    0 -> get_key_with_args(translator, key, args)
+    _ -> priv_get_key(translator, key, "value_plural", args)
+  }
 }

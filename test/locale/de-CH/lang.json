@@ -8,6 +8,10 @@
     "this_is_great": {
         "value": "Das ist fantastisch"
     },
+    "i_have_books": {
+        "value": "Ich habe {COUNT} Buch",
+        "value_plural": "Ich habe {COUNT} Bücher"
+    },
     "amount_planets": {
         "value": "Es gibt {CURRENT} Planeten. Aber es waren mal {BEFORE}."
     }
